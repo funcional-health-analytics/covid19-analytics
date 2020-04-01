@@ -1,7 +1,8 @@
-# Analytics para Dados de COVID19 no Brasil
+# Análise da COVID19 no Brasil
 
 Análise do surto de COVID19 no Brasil empregando-se principalmente modelos epidemiológicos e de processos hospitalares.
 
+**ADVERTÊNCIA:** os modelos e números aqui apresentados não são afirmações formais sobre o progresso da doença, mas apenas exercícios que demonstram técnicas de modelagem e cenários de aplicação.
 
 ## Introdução
 
@@ -18,8 +19,8 @@ O repositório está organizado nas seguintes pastas:
 
 Estão implementados alguns [modelos epidemiológicos clássicos](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology), a saber:
 
-  - SIR: ver *notebook* `epidemic_model_sir.ipynb`. Este é um modelo simples que usamos apenas para demonstrar as técnicas básicas envolvidas.
-  - SEIR: ver *notebook* `epidemic_model_seir.ipynb`. Este modelo é uma sofisticação do SEIR. Ademais, focamos melhorias e análises nele.
+  - SIR (Susceptible-Infectious-Recovered): ver *notebook* `epidemic_model_sir.ipynb`. Este é um modelo simples que usamos apenas para demonstrar as técnicas básicas envolvidas.
+  - SEIR (Susceptible-Exposed-Infectious-Recovered): ver *notebook* `epidemic_model_seir.ipynb`. Este modelo é uma sofisticação do SEIR. Ademais, focamos melhorias e análises nele.
 
 Esses *notebooks* podem ser baixados por interessados e customizados de diversos modos. No próprio texto de cada um apresentamos algumas idéias e exercícios, que podem servir de base para estudos e modelos mais complexos.
 

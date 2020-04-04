@@ -12,7 +12,7 @@ O repositório está organizado nas seguintes pastas:
 
   - `data/`: Dados históricos da COVID19, usado para estimação de parâmetros dos modelos.
   - `notebooks/`: *Notebooks* Jupyter com as análises e modelos.
-  - `results/`: Resultados de modelos, para reuso em outros contextos.
+  - `results/`: Resultados de análises e modelos, para reuso em outros contextos.
 
 
 ## Modelos Epidemiológicos
@@ -20,7 +20,7 @@ O repositório está organizado nas seguintes pastas:
 Estão implementados alguns [modelos epidemiológicos clássicos](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology), a saber:
 
   - SIR (Susceptible-Infectious-Recovered): ver *notebook* `epidemic_model_sir.ipynb`. Este é um modelo simples que usamos apenas para demonstrar as técnicas básicas envolvidas.
-  - SEIR (Susceptible-Exposed-Infectious-Recovered): ver *notebook* `epidemic_model_seir.ipynb`. Este modelo é uma sofisticação do SEIR. Ademais, focamos melhorias e análises nele.
+  - SEIR (Susceptible-Exposed-Infectious-Recovered): ver *notebook* `epidemic_model_seir.ipynb`. Este modelo é uma sofisticação do SIR. Ademais, focamos melhorias e análises nele.
 
 Esses *notebooks* podem ser baixados por interessados e customizados de diversos modos. No próprio texto de cada um apresentamos algumas idéias e exercícios, que podem servir de base para estudos e modelos mais complexos.
 
@@ -29,3 +29,10 @@ Esses *notebooks* podem ser baixados por interessados e customizados de diversos
 ## Modelos de Processos Hospitalares
 
 Além da epidemia em si, é útil compreender como o sistema de saúde se comporta frente aos números projetados de infecções. Para tanto, também implementamos um modelo de processos hospitalares no *notebook* `hospitalization_process.ipynb`.
+
+
+## Análises de Dados Exploratórias
+
+Fazemos algumas análises em dados disponíveis publicamente, notoriamente os do [Our World in Data](https://ourworldindata.org/coronavirus-source-data ). Temos as seguintes análises já realizadas:
+
+  - *notebook* `eda_international.ipynb`: Análises comparativas variadas do progresso da detecção de casos e óbitos ao redor do mundo. Esta análise gera diversos gráficos e dados comparativos, que são armazenados na pasta `results/` para conveniência.

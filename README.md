@@ -26,6 +26,8 @@ Estão implementados alguns [modelos epidemiológicos clássicos](https://en.wik
 
 Esses *notebooks* podem ser baixados por interessados e customizados de diversos modos. No próprio texto de cada um apresentamos algumas idéias e exercícios, que podem servir de base para estudos e modelos mais complexos.
 
+Ademais, fornecemos um *notebook*  central, `models.ipynb`, por meio do qual os mesmos modelos podem ser re-executados com diversas variações de parâmetros, mediante o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html).
+
 
 ![Exemplo de saida do SEIR](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/seir_output_example.png)
 *Exemplo de saída em um dos exercícios com o modelo SEIR. Os números são meramente ilustrativos.*

@@ -13,6 +13,8 @@ O repositório está organizado nas seguintes pastas:
   - `data/`: Dados históricos da COVID19, usado para estimação de parâmetros dos modelos.
   - `notebooks/`: *Notebooks* Jupyter com as análises e modelos.
   - `results/`: Resultados de análises e modelos, para reuso em outros contextos.
+    - `results/eda/`: Imagens e CSVs resultantes das análises exploratórias de dados.
+    - `results/notebooks/`: Com o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html), os próprios *notebooks* podem ser customizados resultarem em novas versões, que são então nesta pasta.
 
 
 ## Modelos Epidemiológicos
@@ -38,9 +40,10 @@ Além da epidemia em si, é útil compreender como o sistema de saúde se compor
 
 ## Análises de Dados Exploratórias
 
-Fazemos algumas análises em dados disponíveis publicamente, notoriamente os do [Our World in Data](https://ourworldindata.org/coronavirus-source-data ). Temos as seguintes análises já realizadas:
+Fazemos algumas análises em dados disponíveis publicamente, notoriamente os do [Our World in Data](https://ourworldindata.org/coronavirus-source-data ). Temos os seguintes *notebooks* disponíveis:
 
-  - *notebook* `eda_international.ipynb`: Análises comparativas variadas do progresso da detecção de casos e óbitos ao redor do mundo. Esta análise gera diversos gráficos e dados comparativos, que são armazenados na pasta `results/` para conveniência.
+  - `eda.ipynb`: Centraliza a execução de outros *notebooks* com parâmetros customizados, mediante o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html). Assim, uma mesma análise pode ser re-executada com diversas variações de parâmetros. Os resultados dessas análises customizadas são também *notebooks*, que são colocados em `results/notebooks/`.
+  - `eda_international.ipynb`: Análises comparativas variadas do progresso da detecção de casos e óbitos ao redor do mundo. Esta análise gera diversos gráficos e dados comparativos, que são armazenados na pasta `results/` para conveniência.
  
 ![Razão óbitos por casos](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/results/eda/eda_deaths_per_cases_ratio_ordered_by_total_cases.png)
 *Exemplo de análise exploratória. Números baseados em dados públicos.*

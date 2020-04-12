@@ -11,11 +11,18 @@ A recente pandemia de COVID-19 vem motivando uma série de iniciativas ao redor 
 O repositório está organizado nas seguintes pastas:
 
   - `data/`: Dados históricos da COVID19, usado para estimação de parâmetros dos modelos.
+    - `data/large/`: Dados históricos grandes demais para serem versionados. Estes dados podem ser baixados usando o script de download fornecido (ver abaixo).
+    - `data/preprocessed/`: Dados pré-processados para conveniência de algumas análises. São criados por um *notebook* específico (ver abaixo).
   - `notebooks/`: *Notebooks* Jupyter com as análises e modelos.
   - `results/`: Resultados de análises e modelos, para reuso em outros contextos.
     - `results/eda/`: Imagens e CSVs resultantes das análises exploratórias de dados.
     - `results/notebooks/`: Com o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html), os próprios *notebooks* podem ser customizados resultarem em novas versões, que são então nesta pasta.
 
+Destacamos ainda dois mecanismos de dados úteis de modo geral: podem ser baixados automaticamente (em ambientes Unix / Linux) via o script:
+
+  - `download_data.sh`: Script que baixa os dados necessários para as diversas análises e modelos. Para ambientes Unix / Linux.
+  - `notebooks/data_preprocessing.ipynb`: *notebook* que pré-processa dados e os coloca em formato mais conveniente para algumas análises. 
+  
 
 ## Modelos Epidemiológicos
 
@@ -31,6 +38,14 @@ Ademais, fornecemos um *notebook*  central, `models.ipynb`, por meio do qual os 
 
 ![Exemplo de saida do SEIR](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/seir_output_example.png)
 *Exemplo de saída em um dos exercícios com o modelo SEIR. Os números são meramente ilustrativos.*
+
+![Exemplo de ajuste do SEIR](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/seir_fit_example.png)
+*Exemplo de dados de simulação ajustados aos dados observados em um dos exercícios com o modelo SEIR. Os números da previsão são meramente ilustrativos.*
+
+![Exemplo de ajustes variados do SEIR](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/seir_multiple_fit_example.png)
+*Exemplo de diversos ajustes do modelo SEIR, considerando partes dos dados para o Brasil. Note como há grande sensibilidade dos resultados, por isso enfatizamos que os números da previsão são meramente ilustrativos.*
+
+
 
 ## Modelos de Processos Hospitalares
 

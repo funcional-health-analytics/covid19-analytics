@@ -1,5 +1,6 @@
 # private diata folders should not be versioned
 data/private/
+data/large/
 
 # jupyter-specific
 .ipynb_checkpoints/

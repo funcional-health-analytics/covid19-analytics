@@ -18,7 +18,7 @@ O repositório está organizado nas seguintes pastas:
     - `results/eda/`: Imagens e CSVs resultantes das análises exploratórias de dados.
     - `results/notebooks/`: Com o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html), os próprios *notebooks* podem ser customizados resultarem em novas versões, que são então nesta pasta.
 
-Destacamos ainda dois mecanismos de dados úteis de modo geral: podem ser baixados automaticamente (em ambientes Unix / Linux) via o script:
+Destacamos ainda dois mecanismos de dados úteis de modo geral:
 
   - `download_data.sh`: Script que baixa os dados necessários para as diversas análises e modelos. Para ambientes Unix / Linux.
   - `notebooks/data_preprocessing.ipynb`: *notebook* que pré-processa dados e os coloca em formato mais conveniente para algumas análises. 
@@ -62,5 +62,5 @@ Fazemos algumas análises em dados disponíveis publicamente, notoriamente os do
   - `eda.ipynb`: Centraliza a execução de outros *notebooks* com parâmetros customizados, mediante o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html). Assim, uma mesma análise pode ser re-executada com diversas variações de parâmetros. Os resultados dessas análises customizadas são também *notebooks*, que são colocados em `results/notebooks/`.
   - `eda_international.ipynb`: Análises comparativas variadas do progresso da detecção de casos e óbitos ao redor do mundo. Esta análise gera diversos gráficos e dados comparativos, que são armazenados na pasta `results/` para conveniência.
  
-![Razão óbitos por casos](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/results/eda/eda_deaths_per_cases_ratio_ordered_by_total_cases.png)
+![Razão óbitos por casos](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/results/eda/eda_deaths_per_7-shifted_cases_ratio_ordered_by_total_cases_zoom.png)
 *Exemplo de análise exploratória. Números baseados em dados públicos.*

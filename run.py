@@ -47,10 +47,10 @@ target_location = st.sidebar.selectbox(
 )
 
 ## SEIR model parameters
-st.sidebar.text("Selecione os parâmetros do modelo")
-alpha = st.sidebar.slider("Alpha: ", 0.0, 1.0, 0.9)
-beta = st.sidebar.slider("Beta: ", 0.0, 1.0, 0.8)
-gamma = st.sidebar.slider("Gamma: ", 0.0, 1.0, 0.3)
+st.sidebar.text("Selecione os parâmetros do modelo SEIR")
+alpha = st.sidebar.slider("Alpha (E para I): ", 0.0, 1.0, 0.9)
+beta = st.sidebar.slider("Beta (S para E): ", 0.0, 1.0, 0.8)
+gamma = st.sidebar.slider("Gamma (I para R): ", 0.0, 1.0, 0.3)
 epidemic_duration_in_days = st.sidebar.number_input(
     "Duração da epidemia (dias): ", 1, 1000, 365
 )
@@ -100,7 +100,7 @@ st.markdown(f"Tamanho da população - {target_location}: **{int(population_size
 df_data_target = df_data_target[epidemic_start_date:]
 
 # Simulation execution
-simulate_trigger = st.sidebar.button("Simulate!")
+simulate_trigger = st.sidebar.button("Simular!")
 if simulate_trigger:
     df_simulation_data = simulate(
         S=population_size - initially_infected,
@@ -117,7 +117,7 @@ if simulate_trigger:
 
     # Plots from simulation
     st.markdown(f"# Modelo SEIR - {target_location}")
-    plot_simulation_output(df_simulation_data, zoom_on="2020-04")
+    plot_simulation_output(df_simulation_data)
 
     # Max Points with date
     peak_infected, date_peak = (

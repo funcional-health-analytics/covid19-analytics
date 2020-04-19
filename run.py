@@ -16,13 +16,14 @@ pd.set_option(
 )  # Granting that pandas won't use scientific notation for floating fields
 
 description = """
-                Análise do surto de COVID19 no Brasil empregando-se principalmente modelos epidemiológicos e de processos hospitalares. 
-                ADVERTÊNCIA: os modelos e números aqui apresentados não são afirmações formais médicas sobre o progresso da doença, 
-                mas apenas exercícios que demonstram técnicas de modelagem e cenários hipotéticos de aplicação.
+                Análise do surto de COVID19 no mundo empregando-se principalmente modelos epidemiológicos e de processos hospitalares. 
+                
+                >**ADVERTÊNCIA**: os modelos e números aqui apresentados não são afirmações formais médicas sobre o progresso da doença, 
+                >mas apenas exercícios que demonstram técnicas de modelagem e cenários hipotéticos de aplicação.
                 """
 # Description
 st.image("notebooks/logo.png")
-st.write("*Análise da COVID19 no Brasil*")
+st.markdown("# **Análise da COVID19 no mundo**")
 st.write(description)
 
 data_folder = "data/"
@@ -50,9 +51,13 @@ st.sidebar.text("Selecione os parâmetros do modelo")
 alpha = st.sidebar.slider("Alpha: ", 0.0, 1.0, 0.9)
 beta = st.sidebar.slider("Beta: ", 0.0, 1.0, 0.8)
 gamma = st.sidebar.slider("Gamma: ", 0.0, 1.0, 0.3)
-epidemic_duration_in_days = st.sidebar.slider(
+epidemic_duration_in_days = st.sidebar.number_input(
     "Duração da epidemia (dias): ", 1, 1000, 365
 )
+
+## Info about date
+final_date = df_epidemy_data["date"].max()
+st.markdown(f"*Última atualização da base de dados: {str(final_date)[:10]}*")
 
 df_data_target = (
     df_epidemy_data[df_epidemy_data["location"] == target_location]
@@ -69,6 +74,8 @@ df_data_target["total_cases_ESTIMATED_2"] = 10 * df_data_target["total_cases"]
 # Plot cases and deaths
 st.markdown(f"# Numéro de Casos and Mortos - {target_location}")
 df_data_target[["total_cases", "total_deaths"]].plot()
+sns.despine()
+plt.grid()
 plt.title(f"Cases and Deaths - {target_location}")
 st.pyplot()
 
@@ -85,25 +92,38 @@ first_date_row = df_data_target.loc[epidemic_start_date]
 population_size = first_date_row["population"]
 initially_infected = first_date_row["total_cases"]
 
-st.write(f"Data de início da epidemia: {epidemic_start_date}")
-st.write(f"Tamanho da população - {target_location}: {population_size}")
+st.markdown(
+    f"Data de início da epidemia (mortes > 50): **{str(epidemic_start_date)[:10]}**"
+)
+st.markdown(f"Tamanho da população - {target_location}: **{int(population_size)}**")
 
 df_data_target = df_data_target[epidemic_start_date:]
 
-df_simulation_data = simulate(
-    S=population_size - initially_infected,
-    E=initially_infected,
-    I=0,
-    R=0,
-    alpha=alpha,
-    beta=beta,
-    gamma=gamma,
-    epidemic_start_date=epidemic_start_date,
-    epidemic_duration_in_days=epidemic_duration_in_days,
-    population_size=population_size,
-)
+# Simulation execution
+simulate_trigger = st.sidebar.button("Simulate!")
+if simulate_trigger:
+    df_simulation_data = simulate(
+        S=population_size - initially_infected,
+        E=initially_infected,
+        I=0,
+        R=0,
+        alpha=alpha,
+        beta=beta,
+        gamma=gamma,
+        epidemic_start_date=epidemic_start_date,
+        epidemic_duration_in_days=epidemic_duration_in_days,
+        population_size=population_size,
+    )
 
+    # Plots from simulation
+    st.markdown(f"# Modelo SEIR - {target_location}")
+    plot_simulation_output(df_simulation_data, zoom_on="2020-04")
 
-st.markdown(f"# Modelo SEIR - {target_location}")
-plot_simulation_output(df_simulation_data, zoom_on="2020-04")
-st.pyplot()
+    # Max Points with date
+    peak_infected, date_peak = (
+        df_simulation_data["I"].max(),
+        df_simulation_data["I"].idxmax(),
+    )
+    st.markdown(f"# Datas e Valores de Pico (Infectados)")
+    st.markdown(f"Data: **{str(date_peak)[:10]}**")
+    st.markdown(f"Infectados: **{int(round(peak_infected,0))}**")

@@ -61,6 +61,10 @@ Fazemos algumas análises em dados disponíveis publicamente, notoriamente os do
 
   - `eda.ipynb`: Centraliza a execução de outros *notebooks* com parâmetros customizados, mediante o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html). Assim, uma mesma análise pode ser re-executada com diversas variações de parâmetros. Os resultados dessas análises customizadas são também *notebooks*, que são colocados em `results/notebooks/`.
   - `eda_international.ipynb`: Análises comparativas variadas do progresso da detecção de casos e óbitos ao redor do mundo. Esta análise gera diversos gráficos e dados comparativos, que são armazenados na pasta `results/` para conveniência.
+  - `eda_srag.ipynb`: Análises dos casos de Síndrome Respiratória Aguda Grave (SRAG) no Brasil, fazendo-se uso dos dados da Fiocruz. Permite estimar casos não reportados de COVID-19, caso tenham sido registrados ao menos como SRAG.
  
 ![Razão óbitos por casos](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/results/eda/eda_deaths_per_7-shifted_cases_ratio_ordered_by_total_cases_zoom.png)
 *Exemplo de análise exploratória. Números baseados em dados públicos.*
+
+![SRAG semanal](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/srag_example.png)
+*Exemplo de análise de Síndrome Respiratória Aguda Grave (SRAG). Números baseados em dados públicos.*

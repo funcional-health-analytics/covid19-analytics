@@ -49,7 +49,30 @@ Ademais, fornecemos um *notebook*  central, `models.ipynb`, por meio do qual os 
 ![Exemplo de ajustes variados do SEIR](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/seir_multiple_fit_example.png)
 *Exemplo de diversos ajustes do modelo SEIR, considerando partes dos dados para o Brasil. Note como há grande sensibilidade dos resultados, por isso enfatizamos que os números da previsão são meramente ilustrativos.*
 
+### Aplicação Interativa
 
+Também fornecemos uma aplicação interativa para simular o modelo SEIR, fazendo-se uso da [biblioteca streamlit](https://www.streamlit.io/). Com isso, pode-se facilmente explorar os dados de diversos países, e aplicar-se o modelo SEIR a cada um deles com os parâmetros desejados. Para executá-la, basta garantir que a biblioteca e demais dependência estejam instaladas e então executar:
+
+```
+  streamlit run src/app_interactive_seir/run.py
+```
+
+Ou então, mais convenientemente, o *script* seguinte (em ambientes Unix / Linux):
+
+
+```
+  run_seir_app.sh
+```
+
+Se necessário, as dependências Python podem ser todas instaladas com o seguinte comando:
+
+
+```
+  pip install -r requirements.txt
+```
+
+![Exemplo de tela da aplicação interativa](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/interactive_app_example.png)
+*Exemplo de tela da aplicação interativa executando modelo SEIR. Os números são meramente ilustrativos.*
 
 ## Modelos de Processos Hospitalares
 

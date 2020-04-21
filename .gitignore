@@ -5,6 +5,9 @@ data/large/
 # jupyter-specific
 .ipynb_checkpoints/
 
+# vscode-specific
+.vscode
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

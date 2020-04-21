@@ -8,6 +8,9 @@ data/large/
 # vscode-specific
 .vscode
 
+# MacOS specific
+.DS_Store
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

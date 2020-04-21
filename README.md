@@ -31,6 +31,10 @@ Estão implementados alguns [modelos epidemiológicos clássicos](https://en.wik
   - SIR (Susceptible-Infectious-Recovered): ver *notebook* `epidemic_model_sir.ipynb`. Este é um modelo simples que usamos apenas para demonstrar as técnicas básicas envolvidas.
   - SEIR (Susceptible-Exposed-Infectious-Recovered): ver *notebook* `epidemic_model_seir.ipynb`. Este modelo é uma sofisticação do SIR. Ademais, focamos melhorias e análises nele.
 
+Também fornecemos outras formas de modelagem:
+
+  - Aprendizado de Máquina clássico: ver *notebook* `epidemic_model_ml.ipynb`. Aqui exploramos a aplicação de alguns algoritmos clássicos de Aprendizado de Máquina diretamente sobre os dados epidemiológicos. Não acreditamos que essa abordagem seja muito eficaz, posto que despreza conhecimento *a priori* sobre a dinâmica do processo sendo aprendido, porém é fornecida como base de comparação, e eventualmente como ponto de partida para experimentos mais sofisticados.
+
 Esses *notebooks* podem ser baixados por interessados e customizados de diversos modos. No próprio texto de cada um apresentamos algumas idéias e exercícios, que podem servir de base para estudos e modelos mais complexos.
 
 Ademais, fornecemos um *notebook*  central, `models.ipynb`, por meio do qual os mesmos modelos podem ser re-executados com diversas variações de parâmetros, mediante o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html).
@@ -61,6 +65,10 @@ Fazemos algumas análises em dados disponíveis publicamente, notoriamente os do
 
   - `eda.ipynb`: Centraliza a execução de outros *notebooks* com parâmetros customizados, mediante o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html). Assim, uma mesma análise pode ser re-executada com diversas variações de parâmetros. Os resultados dessas análises customizadas são também *notebooks*, que são colocados em `results/notebooks/`.
   - `eda_international.ipynb`: Análises comparativas variadas do progresso da detecção de casos e óbitos ao redor do mundo. Esta análise gera diversos gráficos e dados comparativos, que são armazenados na pasta `results/` para conveniência.
+  - `eda_srag.ipynb`: Análises dos casos de Síndrome Respiratória Aguda Grave (SRAG) no Brasil, fazendo-se uso dos dados da Fiocruz. Permite estimar casos não reportados de COVID-19, caso tenham sido registrados ao menos como SRAG.
  
 ![Razão óbitos por casos](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/results/eda/eda_deaths_per_7-shifted_cases_ratio_ordered_by_total_cases_zoom.png)
 *Exemplo de análise exploratória. Números baseados em dados públicos.*
+
+![SRAG semanal](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/srag_example.png)
+*Exemplo de análise de Síndrome Respiratória Aguda Grave (SRAG). Números baseados em dados públicos.*

@@ -8,6 +8,9 @@ data/large/
 # vscode-specific
 .vscode
 
+# pycharm-specific
+.idea
+
 # MacOS specific
 .DS_Store
 

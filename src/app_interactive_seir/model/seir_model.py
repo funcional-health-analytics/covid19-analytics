@@ -1,6 +1,6 @@
 import math
 import pandas as pd
-from utils import aux_enforce_max_addition, aux_enforce_max_removal, param_at
+from model.utils import aux_enforce_max_addition, aux_enforce_max_removal, param_at
 
 
 def s(t, S, E, I, R, alpha, beta, gamma, population_size):
@@ -119,3 +119,20 @@ def simulate(
     df["E+I+R"] = df["E"] + df["I"] + df["R"]
 
     return df
+
+
+def run_seir_model(model_params: dict, epidemy_start_numbers: dict) -> pd.DataFrame:
+    df_simulation_data = simulate(
+        S=epidemy_start_numbers["population_size"] - epidemy_start_numbers["initially_infected"],
+        E=epidemy_start_numbers["initially_infected"],
+        I=0,
+        R=0,
+        alpha=model_params["alpha"],
+        beta=model_params["beta"],
+        gamma=model_params["gamma"],
+        epidemic_start_date=epidemy_start_numbers["start_date"],
+        epidemic_duration_in_days=model_params["epidemic_duration_in_days"],
+        population_size=epidemy_start_numbers["population_size"],
+    )
+
+    return df_simulation_data

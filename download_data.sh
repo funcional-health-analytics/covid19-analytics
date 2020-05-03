@@ -16,3 +16,8 @@ echo "http://databank.worldbank.org/data/download/WDI_csv.zip"
 rm ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/WDI_csv.zip
 wget http://databank.worldbank.org/data/download/WDI_csv.zip -P ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/
 unzip -o ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/WDI_csv.zip -d ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/
+
+echo "Downloading data SRAG data (from unofficial scrapper)"
+
+echo "https://raw.githubusercontent.com/belisards/srag_brasil/master/data/casos_br.csv"
+curl https://raw.githubusercontent.com/belisards/srag_brasil/master/data/casos_br.csv --output ./data/srag_brasil/casos_br.csv

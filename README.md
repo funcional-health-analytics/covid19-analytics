@@ -17,6 +17,7 @@ O repositório está organizado nas seguintes pastas:
   - `results/`: Resultados de análises e modelos, para reuso em outros contextos.
     - `results/eda/`: Imagens e CSVs resultantes das análises exploratórias de dados.
     - `results/notebooks/`: Com o uso da biblioteca [papermill](https://papermill.readthedocs.io/en/latest/index.html), os próprios *notebooks* podem ser customizados resultarem em novas versões, que são então nesta pasta.
+    - `results/notebooks/Brazil`: Resultados específicos para estados e municípios brasileiros, valendo-se dos dados disponibilizados pelo [Brasil.io](https://brasil.io/dataset/covid19/caso_full/)
 
 Destacamos ainda dois mecanismos de dados úteis de modo geral:
 

@@ -53,7 +53,6 @@ Ademais, fornecemos um *notebook*  central, `models.ipynb`, por meio do qual os 
 ![Exemplo de análise de sensibilidade do SEIR](https://raw.githubusercontent.com/funcional-health-analytics/covid19-analytics/master/seir_multiple_fit_stability_example.png)
 *Exemplo de análise de sensibilidade do modelo SEIR, considerando partes dos dados para o Brasil. Note que a posição do pico varia muito no início, passa por um período de pouca variabilidade, e passa ficar novamente instável. Essa análise pode ser um modo interessante de quantificar a confiabilidade das previsões sendo feitas.*
 
-seir_multiple_fit_stability_example.png
 
 ### Aplicação Interativa
 

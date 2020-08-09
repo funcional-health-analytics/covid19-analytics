@@ -13,8 +13,9 @@ curl https://covid.ourworldindata.org/data/ecdc/locations.csv --output ./data/ou
 echo ""
 echo "**** Downloading data from Brasil.io ****"
 
-echo "https://brasil.io/dataset/covid19/caso_full/?format=csv"
-curl https://brasil.io/dataset/covid19/caso_full/?format=csv --output ./data/brasil.io/dataset/covid19/caso_full.csv
+echo "https://data.brasil.io/dataset/covid19/caso_full.csv.gz"
+curl https://data.brasil.io/dataset/covid19/caso_full.csv.gz --output ./data/brasil.io/dataset/covid19/caso_full.csv.gz
+gunzip ./data/brasil.io/dataset/covid19/caso_full.csv.gz -f
 
 echo ""
 echo "**** Downloading data from World Bank ****"
@@ -24,7 +25,13 @@ rm ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/W
 wget http://databank.worldbank.org/data/download/WDI_csv.zip -P ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/
 unzip -o ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/WDI_csv.zip -d ./data/large/datacatalog.worldbank.org/dataset/world-development-indicators/
 
-echo "**** Downloading data SRAG data (from unofficial scrapper) ****"
+echo "**** Downloading data SRAG data (from official Fiocruz repository) ****"
 
-echo "https://raw.githubusercontent.com/belisards/srag_brasil/master/data/casos_br.csv"
-curl https://raw.githubusercontent.com/belisards/srag_brasil/master/data/casos_br.csv --output ./data/srag_brasil/casos_br.csv
+#echo "https://raw.githubusercontent.com/belisards/srag_brasil/master/data/casos_br.csv"
+#curl https://raw.githubusercontent.com/belisards/srag_brasil/master/data/casos_br.csv --output ./data/srag_brasil/casos_br.csv
+
+echo "https://gitlab.procc.fiocruz.br/mave/repo/-/raw/master/Dados/InfoGripe/dados_semanais_faixa_etaria_sexo_virus_sem_filtro_sintomas.csv"
+curl https://gitlab.procc.fiocruz.br/mave/repo/-/raw/master/Dados/InfoGripe/dados_semanais_faixa_etaria_sexo_virus_sem_filtro_sintomas.csv --output ./data/large/fiocruz/infogripe/dados_semanais_faixa_etaria_sexo_virus_sem_filtro_sintomas.csv
+
+echo "https://gitlab.procc.fiocruz.br/mave/repo/-/raw/master/Dados/InfoGripe/dados_semanais_faixa_etaria_sexo_virus.csv"
+curl https://gitlab.procc.fiocruz.br/mave/repo/-/raw/master/Dados/InfoGripe/dados_semanais_faixa_etaria_sexo_virus.csv --output ./data/large/fiocruz/infogripe/dados_semanais_faixa_etaria_sexo_virus.csv
